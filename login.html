@@ -2,7 +2,7 @@
  * @Author: cuibai 2367736060@qq.com
  * @Date: 2022-08-10 21:32:37
  * @LastEditors: cuibai 2367736060@qq.com
- * @LastEditTime: 2022-08-10 21:32:46
+ * @LastEditTime: 2022-08-11 22:16:17
  * @FilePath: \web移动端\Node的学习\The_big_event\d01\login.html
  * @Description: 
  * 登录
@@ -14,9 +14,59 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>大事件-登录-注册</title>
+    <!-- 导入 layui 的样式 以及导入自己的样式  -->
+    <link rel="stylesheet" href="./assets/lib/layui/css/layui.css">
+    <link rel="stylesheet" href="./assets/css/login.css">
+    <script src="./assets/lib/jquery.js"></script>
+    <script src="./assets/js/login.js"></script>
 </head>
 <body>
+    <!-- 头部 logo 区域 -->
+    <div class="layui-main">
+        <img src="./assets/images/logo.png" alt="">
+    </div>
+    <!-- 登录注册区域 -->
+    <div class="loginAndRegBox">
+        <!-- 绘制标题 -->
+        <div class="title-box"></div>
+        <!-- 登录 -->
+        <div class="login-box" >
+        <!-- 登录的表单区 -->
+        <form class="layui-form" action="">
+            <div class="layui-form-item">
+                <!-- 用户名 -->
+                <i class="layui-icon layui-icon-username"></i>  
+                <input type="text" name="username" required  lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+
+                
+            </div>
+            <div class="layui-form-item">
+                <!-- 密码 -->
+                <i class="layui-icon layui-icon-password"></i>  
+                <input type="password" name="password" required  lay-verify="required" placeholder="请输入用户名密码" autocomplete="off" class="layui-input">
+            </div>
+            <div class="layui-from-item">
+                <!-- 表单的提交 按钮有 submit 属性 普通按钮没有  -->
+                <button class="layui-btn layui-btn-fluid layui-btn-normal">立即提交</button>
+            </div>
+            <div class="layui-from-item links">
+                <a href="javascript:;" id="link_reg">去注册账户</a>
+            </div>
+        </from>
+        </div>
+        <!-- 注册 -->
+        <div class="reg-box " >
+            <a href="javascript:;"id="link_login">去登录</a>
+        </div>
+    </div>
+    
+
+    </div>
+
+    <!-- 导入 javascript -->
+
+
     
 </body>
 </html>
