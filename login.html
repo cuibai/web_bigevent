@@ -2,7 +2,7 @@
  * @Author: cuibai 2367736060@qq.com
  * @Date: 2022-08-10 21:32:37
  * @LastEditors: cuibai 2367736060@qq.com
- * @LastEditTime: 2022-08-11 22:16:17
+ * @LastEditTime: 2022-08-12 20:40:00
  * @FilePath: \web移动端\Node的学习\The_big_event\d01\login.html
  * @Description: 
  * 登录
@@ -32,32 +32,63 @@
         <div class="title-box"></div>
         <!-- 登录 -->
         <div class="login-box" >
-        <!-- 登录的表单区 -->
-        <form class="layui-form" action="">
-            <div class="layui-form-item">
-                <!-- 用户名 -->
-                <i class="layui-icon layui-icon-username"></i>  
-                <input type="text" name="username" required  lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
 
-                
-            </div>
-            <div class="layui-form-item">
-                <!-- 密码 -->
-                <i class="layui-icon layui-icon-password"></i>  
-                <input type="password" name="password" required  lay-verify="required" placeholder="请输入用户名密码" autocomplete="off" class="layui-input">
-            </div>
-            <div class="layui-from-item">
-                <!-- 表单的提交 按钮有 submit 属性 普通按钮没有  -->
-                <button class="layui-btn layui-btn-fluid layui-btn-normal">立即提交</button>
-            </div>
-            <div class="layui-from-item links">
-                <a href="javascript:;" id="link_reg">去注册账户</a>
-            </div>
-        </from>
+        <!-- 登录的表单区 -->
+            <form class="layui-form" action="">
+
+                <div class="layui-form-item">
+
+                    <!-- 用户名 -->
+                    <i class="layui-icon layui-icon-username"></i>  
+                    <input type="text" name="username" required  lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+                </div>
+                <div class="layui-form-item">
+                    <!-- 密码 -->
+                    <i class="layui-icon layui-icon-password"></i>  
+                    <input type="password" name="password" required  lay-verify="required" placeholder="请输入用户名密码" autocomplete="off" class="layui-input">
+                </div>
+                <div class="layui-from-item">
+                    <!-- 表单的提交 按钮有 submit 属性 普通按钮没有  -->
+                    <button class="layui-btn layui-btn-fluid layui-btn-normal">立即提交</button>
+                </div>
+                <div class="layui-from-item links">
+                    <a href="javascript:;" id="link_reg">去注册账户</a>
+                </div>
+            </form>
         </div>
         <!-- 注册 -->
         <div class="reg-box " >
-            <a href="javascript:;"id="link_login">去登录</a>
+            <!-- 注册的表单 -->
+            <form class="layui-form" action="">
+
+                <div class="layui-form-item">
+
+                    <!-- 用户名 -->
+                    <i class="layui-icon layui-icon-username"></i>  
+                    <input type="text" name="username" required  lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+                </div>
+                <div class="layui-form-item">
+                    <!-- 密码 -->
+                    <i class="layui-icon layui-icon-password"></i>  
+                    <input type="password" name="password" required  lay-verify="required" placeholder="请输入用户名密码" autocomplete="off" class="layui-input">
+                </div>
+                <!-- 确认密码 -->
+                <div class="layui-form-item">
+                    <!-- 密码 -->
+                    <i class="layui-icon layui-icon-password"></i>  
+                    <input type="repassword" name="password" required  lay-verify="required" placeholder="确认用户名密码" autocomplete="off" class="layui-input">
+                </div>
+
+                <div class="layui-from-item">
+                    <!-- 表单的提交 按钮有 submit 属性 普通按钮没有  -->
+                    <button class="layui-btn layui-btn-fluid layui-btn-normal">登录</button>
+                </div>
+                <div class="layui-from-item links">
+                    <a href="javascript:;"id="link_login">去登录</a>
+                </div>
+            </form>
+            
+        
         </div>
     </div>
     
