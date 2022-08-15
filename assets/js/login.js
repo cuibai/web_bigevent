@@ -2,7 +2,7 @@
  * @Author: cuibai 2367736060@qq.com
  * @Date: 2022-08-11 21:22:06
  * @LastEditors: cuibai 2367736060@qq.com
- * @LastEditTime: 2022-08-13 18:54:09
+ * @LastEditTime: 2022-08-15 20:58:08
  * @FilePath: \web移动端\Node的学习\The_big_event\d01\assets\js\login.js
  * @Description: 
  * 
@@ -53,7 +53,7 @@ $(function() {
         e.preventDefault();
         // 发起 ajax 请求 post
         $.post(
-            'http://www.liulongbin.top:3007/api/reguser',
+            '/api/reguser',
             {username:$('#form_reg [name=username]').val(),password:$('#form_reg [name=password]').val()},
             function(res){
                 if(res.status !== 0){
@@ -66,13 +66,13 @@ $(function() {
             }
         )
     })
-    // 监听 注册 表单的提交事件
+    // 监听 登录 表单的提交事件
     $('#form_login').submit(function(e){
-        //组织 默认行为
+        //阻止 默认行为
         e.preventDefault()
         // 发起 ajax 请求 post
         $.ajax({
-            url:'http://www.liulongbin.top:3007/api/login',
+            url:'/api/login',
             method:"post",
             // 一次性获取表单的全部元素
             data:$(this).serialize(),
@@ -84,7 +84,7 @@ $(function() {
                 console.log(res)
                 // 保存 返回的 token值 在locationStorage 中
                 localStorage.setItem('token',res.token)
-                //location.href = './index.html'
+                location.href = './index.html'
             }
 
             
