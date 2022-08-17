@@ -2,7 +2,7 @@
  * @Author: cuibai 2367736060@qq.com
  * @Date: 2022-08-11 21:22:06
  * @LastEditors: cuibai 2367736060@qq.com
- * @LastEditTime: 2022-08-15 20:58:08
+ * @LastEditTime: 2022-08-17 20:50:10
  * @FilePath: \web移动端\Node的学习\The_big_event\d01\assets\js\login.js
  * @Description: 
  * 
@@ -27,7 +27,7 @@ $(function() {
     // 创建自己的规则
     //从 layui 中获取form 对象  自定义修改
     var form = layui.form
-    var layer  = layui.layer;
+    var layer  = layui.layer
     //自定义规则,通过form.verify() 函数来修改
     form.verify({
         //规则统一存放
@@ -40,8 +40,8 @@ $(function() {
             //进行比较判断
             //判断失败 进行 提
             var pwd = $('.reg-box [name=password]').val()
-            if(pwd != value){
-                return '两次密码不一致! '
+            if(pwd !== value){
+                alert('两次密码不一致!')
             }
         }
     })

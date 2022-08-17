@@ -1,0 +1,57 @@
+.layui-footer{
+    text-align: center;
+    font-size: .75rem;
+}
+/*设置字体图标*/
+
+.iconfont{
+    margin-right: .5rem;
+}
+.layui-icon {
+    margin-right: .5rem;
+    margin-left: 1.25rem;
+}
+/**对 iframe 进行样式编辑 */
+iframe{
+    height: 100%;
+    width: 100%;
+}
+.layui-body{
+    overflow: hidden;
+}
+
+/*清除 样式携带的 C3的动画效果**/
+a{
+    transition: none !important;
+}
+
+.userinfo{
+    height: 3.75rem;
+    line-height: 3.75rem;
+    text-align: center;
+    font-size: .75rem;
+    user-select: none; /*内容禁止 访问*/
+}
+
+.layui-side-scroll .userinfo{
+    border-bottom: .0625rem solid #282b23;
+}
+.layui-nav-img{
+    height: 2.5rem;
+    width: 2.5rem;
+}
+.text-avater{
+    display: inline-block;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: #009688;
+    border-radius: 50%;
+    /*center*/
+    line-height: 2.5rem;
+    text-align: center;
+    font-size: 1.25rem;
+    color: #fff;
+    position: relative;
+    top: .25rem;
+    margin-right: .625rem;
+}
