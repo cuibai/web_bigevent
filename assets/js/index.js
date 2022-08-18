@@ -2,7 +2,7 @@
  * @Author: cuibai 2367736060@qq.com
  * @Date: 2022-08-16 21:03:57
  * @LastEditors: cuibai 2367736060@qq.com
- * @LastEditTime: 2022-08-17 21:45:53
+ * @LastEditTime: 2022-08-18 20:50:28
  * @FilePath: \web移动端\Node的学习\The_big_event\d01\assets\js\index.js
  * @Description: 
  * 
@@ -29,46 +29,33 @@ $(function(){
 
 })
 
-
-
-
 /**获取用户信息 */
-function getUserInfo(){
+function getUserInfo() {
     $.ajax({
-        /*ajax 请求 会调用 baseAPI的 文件 */
-        url:'/my/userinfo',
-        method:'GET',
-        /**请求头的 配置对象 */
-        // headers:{
-        //     /**从本地存储中获取 token的 值 */
-        //     Authorization: locationStorage.getItem('token')||''
-        // },
-        success:function(res){
-            console.log(res)
-            // 验证判断
-            if(res.status !== 0 ){
-                layui.layer.msg('获取信息失败!!')
-
-            }
-            //渲染 头像  使用 renderAvatar ()  函数
-            renderAvatar(res.data)
-        },
-        /*优化设计  在用户没有取得权限(token)的情况下 禁止从login 界面跳转到 index 界面,使用 jqurey 的complete 函数 即在函数的请求 不管是否成功 都会返回的回调函数*/
-        complete: function(res) {
-            console.log('执行了 complete 回调：')
-            console.log(res)
-            // 在 complete 回调函数中，可以使用 res.responseJSON 拿到服务器响应回来的数据
-            if (res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败！') {
-            // 1. 强制清空 token
-            localStorage.removeItem('token')
-            // 2. 强制跳转到登录页面
-            location.href = '/login.html'
+        method: 'GET',
+        url: '/my/userinfo',
+        success: function(res) {
+            if (res.status !== 0) {
+            return layui.layer.msg('获取用户信息失败！')
         }
-        }        
-
+        // 调用 renderAvatar 渲染用户的头像
+        renderAvatar(res.data)
+        },
+      // 不论成功还是失败，最终都会调用 complete 回调函数
+        // complete: function(res) {
+        // // console.log('执行了 complete 回调：')
+        // // console.log(res)
+        // // 在 complete 回调函数中，可以使用 res.responseJSON 拿到服务器响应回来的数据
+        // if (res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败！') {
+        //   // 1. 强制清空 token
+        //     localStorage.removeItem('token')
+        //   // 2. 强制跳转到登录页面
+        //     location.href = './login.html'
+        // }
+        // }
     })
-
 }
+
 
 // 渲染 头像 
 function renderAvatar(user){
@@ -81,12 +68,12 @@ function renderAvatar(user){
     if(user.user_pic !== null){
         //显示 自定义的  隐藏 默认的
         $('.layui-nav-img').attr('src', user.user_pic).show()
-        $('text-avatar').hide()
+        $('.text-avatar').hide()
     }else{
         //默认
         $('.layui-nav-img').hide()
         // 文本内容使用 用户的第一个字符
         var first = name[0].toUpperCase() // 转大写
-        $('text-avatar').html(first).show()
+        $('.text-avatar').html(first).show()
     }
 }
