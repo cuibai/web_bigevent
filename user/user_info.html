@@ -2,7 +2,7 @@
  * @Author: cuibai 2367736060@qq.com
  * @Date: 2022-08-18 21:11:53
  * @LastEditors: cuibai 2367736060@qq.com
- * @LastEditTime: 2022-08-19 23:27:17
+ * @LastEditTime: 2022-08-20 17:30:34
  * @FilePath: \web移动端\Node的学习\The_big_event\d01\user\user_info.html
  * @Description: 
  * 
@@ -25,12 +25,15 @@
         <div class="layui-card-header">修改用户信息</div>
         <div class="layui-card-body">
             <!-- form 表单 -->
-            <form class="layui-form" action="">
+            <form class="layui-form" lay-filter = "formUserInfo">
+                <!-- 放置 一个 隐藏 域,相比于 普通 input 不可见 -->
+                <input type="hidden" name="id" value="">
+
                 <!-- 01 -->
                 <div class="layui-form-item">
                     <label class="layui-form-label">登录名称&nbsp;</label>
                     <div class="layui-input-block">
-                        <input type="text" name="title" required lay-verify="required" placeholder="请输入登录名称"
+                        <input type="text" name="username" required lay-verify="required" placeholder="请输入登录名称"
                             autocomplete="off" class="layui-input">
                     </div>
                 </div>
@@ -38,7 +41,7 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">用户昵称&nbsp;</label>
                     <div class="layui-input-block">
-                        <input type="text" name="title" required lay-verify="required|nickname" placeholder="请输入用户昵称"
+                        <input type="text" name="nickname" required lay-verify="required|nickname" placeholder="请输入用户昵称"
                             autocomplete="off" class="layui-input">
                     </div>
                 </div>
@@ -46,7 +49,7 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">用户邮箱📫</label>
                     <div class="layui-input-block">
-                        <input type="text" name="title" required lay-verify="required|email" placeholder="请输入用户邮箱"
+                        <input type="text" name="email" required lay-verify="required|email" placeholder="请输入用户邮箱"
                             autocomplete="off" class="layui-input">
                     </div>
                 </div>
@@ -54,7 +57,7 @@
                 <div class="layui-form-item">
                     <div class="layui-input-block">
                         <button class="layui-btn" lay-submitlay-filter="formDemo"> 提交修改</button>
-                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                        <button type="reset" class="layui-btn layui-btn-primary" id="btnReset">重置</button>
                     </div>
                 </div>
 
@@ -65,9 +68,10 @@
 
     <!-- 导入 layui  -->
     <script src="../assets/lib/layui/layui.all.js"></script>
+    <!-- 自定义-底层 js -->
     <script src = '../assets/lib/jquery.js'></script>
     <script src = '../assets/js/baseAPI.js'></script>
-    <!-- 导入 自定义 -->
+    <!-- 导入 自定义 js -->
     <script src = '../assets/js/user/user_info.js'></script>
 </body>
 
