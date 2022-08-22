@@ -1,0 +1,21 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding: 0.9375rem;
+    background-color: aliceblue;
+}
+
+.layui-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#from-add {
+    padding-top: 1.25rem;
+    padding-right: 1.875rem;
+}
