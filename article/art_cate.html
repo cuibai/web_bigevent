@@ -2,7 +2,7 @@
  * @Author: cuibai 2367736060@qq.com
  * @Date: 2022-08-22 21:33:34
  * @LastEditors: cuibai 2367736060@qq.com
- * @LastEditTime: 2022-08-22 23:21:30
+ * @LastEditTime: 2022-08-24 22:24:38
  * @FilePath: \web移动端\Node的学习\The_big_event\d01\article\art_cate.html
  * @Description: 2022
  * 
@@ -27,7 +27,7 @@
     <div class="layui-card">
         <div class="layui-card-header">
             <span>文章类别管理</span>
-            <button type="button" class="layui-btn layui-btn-warm  layui-btn-sm" id="btn-add-get">添加类别</button>
+            <button type="button" class="layui-btn layui-btn-warm  layui-btn-sm" id="btnAddCate">添加类别</button>
         </div>
         <div class="layui-card-body">
             <table class="layui-table">
@@ -63,14 +63,14 @@
             <td>{{$value.alias}}</td>
             <td>
                 <!-- 操作 按钮 -->
-                <button type="button" class="layui-btn layui-btn-xs">编辑</button>
-                <button type="button" class="layui-btn layui-btn-danger layui-btn-xs">删除</button删除 </td>
+                <button type="button" class="layui-btn layui-btn-xs btn-edit" data-id = "{{$value.Id}}">编辑</button>
+                <button type="button" class="layui-btn layui-btn-danger layui-btn-xs btn-dalete" data-id = {{$value.Id}}>删除</button删除 </td>
         </tr>
         {{/each}}
     </script>
-
+    <!-- 添加分类的弹出层  -->
     <script type="text/html" id="dilog-add">
-        <form class="layui-form" id="from-add">
+        <form class="layui-form" id="form-add">
             <!-- 01 -->
             <div class="layui-form-item">
                 <label class="layui-form-label">分类名称</label>
@@ -98,6 +98,40 @@
 
 
     </script>
+
+    <!-- 修改分类的弹出层  -->
+    <script type="text/html" id="dilog-edit">
+            <form class="layui-form" id="form-edit" lay-filter = "form-edit">
+
+                <!-- 00  因为在获取 元素 和上传元素时,都是需要id 值的,所以在
+                设计中, 需要添加一个隐藏域 用来放置 所需要的 id-->
+                <input type="hidden" name="Id">
+                <!-- 01 -->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">分类名称</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="name" required lay-verify="required" placeholder="请输入分类名称" autocomplete="off"
+                            class="layui-input">
+                    </div>
+                </div>
+                <!-- 02 -->
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">分类别名</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="alias" requirelay-verify="required" placeholder="请输入分类别名" autocomplete="off"
+                                class="layui-input">
+                        </div>
+                    </div>
+                <!-- 03 -->
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button class="layui-btn" lay-submit lay-filter="formDemo">确认修改</button>
+                        </div>
+                    </div>
+            </form>
+
+
+        </script>
 
 
 
