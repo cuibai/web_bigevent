@@ -2,8 +2,8 @@
  * @Author: cuibai 2367736060@qq.com
  * @Date: 2022-08-24 22:38:29
  * @LastEditors: cuibai 2367736060@qq.com
- * @LastEditTime: 2022-08-24 22:42:45
- * @FilePath: \web移动端\Node的学习\The_big_event\d01\article\art_list.html
+ * @LastEditTime: 2022-08-27 15:29:52
+ * @FilePath: \d01\article\art_list.html
  * @Description: 
  * 
  * Copyright (c) 2022 by cuibai 2367736060@qq.com, All Rights Reserved. 
@@ -25,15 +25,96 @@
     <div class="layui-card">
         <div class="layui-card-header">文章列表</div>
         <div class="layui-card-body">
-            卡片式面板面板通常用于非白色背景色的主体内<br>
             <!-- 筛选区 -->
+            <form class="layui-form" id="form=search">
+                <!--01  -->
+                <div class="layui-form-item layui-inline">
+                    <select name="cate_id">
+                        <!-- <option value="">所有分类</option>
+                        <option value="010">北京</option>
+                        <option value="021">上海</option>
+                        <option value="0571">杭州</option> -->
+                    </select>
+                </div>
+                <!-- 02 -->
+                <div class="layui-form-item layui-inline">
+                    <select name="status">
+                        <option value="">所有状态</option>
+                        <option value="已发布">已发布</option>
+                        <option value="草稿编辑">草稿编辑</option>
+
+                    </select>
+                </div>
+                <!-- 03 -->
+                <div class="layui-input-block layui-inline">
+                    <button class="layui-btn" lay-submit lay-filter="formDemo">筛选</button>
+                </div>
+
+            </form>
             <!-- 列表区 -->
+            <table class="layui-table">
+                <colgroup>
+                    <col>
+                    <col width="150">
+                    <col width="180">
+                    <col width="150">
+                    <col width="150">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>文章标题</th>
+                        <th>分类</th>
+                        <th>发表时间</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- <tr>
+                    <td>贤心</td>
+                    <td>2016-11-29</td>
+                    <td>人生就像是一场修行</td>
+                    <td>人生就像是一场修行</td>
+                </tr> -->
+                </tbody>
+            </table>
+
             <!-- 分页区-->
+            <div id="pageBox"></div>
+
 
         </div>
     </div>
 
+    <!-- 列表数据 模板引擎 -->
+    <script type='text/html' id='tpl-table'>
+        {{each data}}
+        <tr>
+            <td>{{$value.title}}</td>
+            <td>{{$value.cate_name}}</td>
+            <td>{{$value.pub_date|dateFormat}}</td>
+            <td>{{$value.status}}</td>
+            <td>
+                <button type="button" class="layui-btn layui-btn-warm layui-btn-xs">编辑</button>
+                <button type="button" class="layui-btn layui-btn-danger layui-btn-xs">删除</button>
+            </td>
+            
+        </tr>
+        {/each}
+        
+    </script>
 
+    <!-- 定义 下拉选项 的 模板 -->
+    <script type="text/html" id="tpl-cate">
+        {{each data}}
+        <option value="">所有分类</option>
+        <option value="{{$value.Id}}">{{$value.name}}</option>
+
+        {/each}
+
+    </script>
+
+    <!-- 重学 一下 -->
 
 
 
