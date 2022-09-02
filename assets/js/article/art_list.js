@@ -2,7 +2,7 @@
  * @Author: cuibai 2367736060@qq.com
  * @Date: 2022-08-24 22:40:03
  * @LastEditors: cuibai 2367736060@qq.com
- * @LastEditTime: 2022-08-27 16:15:18
+ * @LastEditTime: 2022-09-01 20:47:45
  * @FilePath: \d01\assets\js\article\art_list.js
  * @Description: 
  * 
@@ -150,4 +150,50 @@ $(function () {
         });
 
     }
+
+
+    //通过代理的形式 给删除按钮 绑定代理事件
+    $('tbody').on('click', '.btn-delete', function () {
+        console.log('delete clicked ')
+        //获取当前页面 删除 按钮的长度
+        var lrn = $('.btn-delete').length
+        //接收数据  Id
+        var id = $(this).attr('data-id');
+        //删除 按钮被点击 开启询问弹窗
+        //设置询问事件
+        layer.confirm('确认删除 ?', { icon: 3, title: '提示' }, function (index) {
+            // TODO: 删除的动作
+            $.ajax({
+                type: 'GET',
+                url: '/my/article/delete' + id,
+                success: function (res) {
+                    if (res !== 0) {
+                        layer.msg('删除失败');
+
+                    }
+                    layer.msg('删除 成功 ')
+                    //重新加载数据
+                    //initTable()
+                    /***bug
+                     * 删除某一页全部的数据后,页码值会减少,
+                     * 但是页码的内容却不会更新  ,
+                     * 解决需要加一个数据的判断 判断当前页码值是否还存在数据
+                     *  把当前页面的 删除按钮的个数作为判断条件  删除完毕 就没有数据,删除按钮也没有  
+                     */
+                    if (len === 1) {
+                        // TODO:    len 的值为1  当前页面没有数据
+                        //页码值 最小值为一,不能存在小于1 的情况
+                        q.pagenum = q.pagenum === 1 ? 1 : q.pagenum - 1
+
+                    }
+                    initTable()
+
+
+                }
+            })
+
+            layer.close(index);
+        });
+
+    })
 })
