@@ -2,7 +2,7 @@
  * @Author: cuibai 2367736060@qq.com
  * @Date: 2022-08-24 22:38:29
  * @LastEditors: cuibai 2367736060@qq.com
- * @LastEditTime: 2022-09-01 20:51:06
+ * @LastEditTime: 2022-09-03 15:58:16
  * @FilePath: \d01\article\art_list.html
  * @Description: 
  * 
@@ -86,48 +86,41 @@
         </div>
     </div>
 
-    <!-- 列表数据 模板引擎 -->
-    <script type='text/html' id='tpl-table'>
+    <!--  ********************************  -->
+
+    <!-- 导入外部模板 -->
+    <script src="/assets/lib/template-web.js""></script>
+    <!-- 列表数据的模板引擎 -->
+    <script type=" text/html" id="tpl-table">
         {{each data}}
         <tr>
             <td>{{$value.title}}</td>
             <td>{{$value.cate_name}}</td>
-            <td>{{$value.pub_date|dateFormat}}</td>
-            <td>{{$value.status}}</td>
+            <td>{{$value.pub_date|dataFormat}}</td>
+            <td>{{$value.state}}</td>
             <td>
-                <button type="button" class="layui-btn layui-btn-warm layui-btn-xs">编辑</button>
-                <button type="button" class="layui-btn layui-btn-danger layui-btn-xs btn-delete" data-id = '{{$value.Id}}'>删除</button>
+            <button type="button" class="layui-btn layui-btn-xs">编辑</button>
+            <button type="button" class="layui-btn layui-btn-danger layui-btn-xs btn-delete" data-id="{{$value.Id}}">删除</button>
             </td>
-            
         </tr>
-        {/each}
-        
+        {{/each}}
     </script>
 
-    <!-- 定义 下拉选项 的 模板 -->
+    <!-- 分类可选项的模板结构 -->
     <script type="text/html" id="tpl-cate">
-        {{each data}}
         <option value="">所有分类</option>
+        {{each data}}
         <option value="{{$value.Id}}">{{$value.name}}</option>
-
-        {/each}
-
+        {{/each}}
     </script>
-
-    <!-- 重学 一下 -->
-
-
-
-
 
     <!-- 导入 必要 模板 -->
-    <script src="../assets/lib/layui/layui.all.js"></script>
-    <script src="../assets/lib/jquery.js"></script>
-    <script src="../assets/js/baseAPI.js"></script>
-    <!-- 导入外部模板 -->
-    <script src="../assets/lib/template-web.js""></script>
+    <script src="/assets/lib/layui/layui.all.js"></script>
+    <script src="/assets/lib/jquery.js"></script>
+    <script src="/assets/js/baseAPI.js"></script>
+
     <!-- 自定义 模板  -->
-    <script src=" ../assets/js/article/art_list.js"></script>
+    <script src=" /assets/js/article/art_list.js"></script>
 
 </body>
 
