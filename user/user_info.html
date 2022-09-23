@@ -2,8 +2,8 @@
  * @Author: cuibai 2367736060@qq.com
  * @Date: 2022-08-18 21:11:53
  * @LastEditors: cuibai 2367736060@qq.com
- * @LastEditTime: 2022-08-20 17:30:34
- * @FilePath: \web移动端\Node的学习\The_big_event\d01\user\user_info.html
+ * @LastEditTime: 2022-09-17 21:44:43
+ * @FilePath: \d01\user\user_info.html
  * @Description: 
  * 
  * Copyright (c) 2022 by cuibai 2367736060@qq.com, All Rights Reserved. 
@@ -25,7 +25,7 @@
         <div class="layui-card-header">修改用户信息</div>
         <div class="layui-card-body">
             <!-- form 表单 -->
-            <form class="layui-form" lay-filter = "formUserInfo">
+            <form class="layui-form" lay-filter="formUserInfo">
                 <!-- 放置 一个 隐藏 域,相比于 普通 input 不可见 -->
                 <input type="hidden" name="id" value="">
 
@@ -34,7 +34,7 @@
                     <label class="layui-form-label">登录名称&nbsp;</label>
                     <div class="layui-input-block">
                         <input type="text" name="username" required lay-verify="required" placeholder="请输入登录名称"
-                            autocomplete="off" class="layui-input">
+                            autocomplete="off" class="layui-input" readonly>
                     </div>
                 </div>
                 <!-- 02 -->
@@ -69,10 +69,10 @@
     <!-- 导入 layui  -->
     <script src="../assets/lib/layui/layui.all.js"></script>
     <!-- 自定义-底层 js -->
-    <script src = '../assets/lib/jquery.js'></script>
-    <script src = '../assets/js/baseAPI.js'></script>
+    <script src='../assets/lib/jquery.js'></script>
+    <script src='../assets/js/baseAPI.js'></script>
     <!-- 导入 自定义 js -->
-    <script src = '../assets/js/user/user_info.js'></script>
+    <script src='../assets/js/user/user_info.js'></script>
 </body>
 
 </html>

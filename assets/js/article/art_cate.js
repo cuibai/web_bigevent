@@ -2,8 +2,8 @@
  * @Author: cuibai 2367736060@qq.com
  * @Date: 2022-08-22 21:38:39
  * @LastEditors: cuibai 2367736060@qq.com
- * @LastEditTime: 2022-08-24 22:35:50
- * @FilePath: \web移动端\Node的学习\The_big_event\d01\assets\js\article\art_cate.js
+ * @LastEditTime: 2022-09-23 23:11:24
+ * @FilePath: \d01\assets\js\article\art_cate.js
  * @Description:
  *
  * Copyright (c) 2022 by cuibai 2367736060@qq.com, All Rights Reserved.
@@ -21,7 +21,7 @@ $(function () {
             method: 'get',
             url: '/my/article/cates',
             success: function (res) {
-                console.log('获取到后台数据 res');
+                //console.log('获取到后台数据 res');
                 var htmlStr = template('tpl-table', res)
                 //数据填充 
                 console.log(res);
@@ -122,8 +122,9 @@ $(function () {
     })
 
     //通过代理的形式 给删除 按钮绑定事件
-    $('tbody').on('click', '.btn-dalete', function (e) {
+    $('tbody').on('click', '.btn-delete', function (e) {
         e.preventDefault();
+        console.log('delete clicked')
         var deleteId = $(this).attr('data-id'); //获取 id 的值
         layer.confirm('是否确定删除', { icon: 3, title: '警告' }, function (index) {
             //do something
@@ -142,9 +143,6 @@ $(function () {
                     initArtCateList()
                 }
             })
-
-
-
         });
     })
 

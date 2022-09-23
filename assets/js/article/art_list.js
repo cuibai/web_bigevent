@@ -2,7 +2,7 @@
  * @Author: cuibai 2367736060@qq.com
  * @Date: 2022-08-24 22:40:03
  * @LastEditors: cuibai 2367736060@qq.com
- * @LastEditTime: 2022-09-03 15:59:42
+ * @LastEditTime: 2022-09-23 23:01:38
  * @FilePath: \d01\assets\js\article\art_list.js
  * @Description: 
  * 
@@ -14,7 +14,7 @@ $(function () {
     var laypage = layui.laypage
 
     // 定义美化时间的过滤器
-    template.defaults.imports.dataFormat = function (date) {
+    template.defaults.imports.dateFormat = function (date) {
         const dt = new Date(date)
 
         var y = dt.getFullYear()
@@ -27,7 +27,6 @@ $(function () {
 
         return y + '-' + m + '-' + d + ' ' + hh + ':' + mm + ':' + ss
     }
-
     // 定义补零的函数
     function padZero(n) {
         return n > 9 ? n : '0' + n
