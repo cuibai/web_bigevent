@@ -2,7 +2,7 @@
  * @Author: cuibai 2367736060@qq.com
  * @Date: 2022-08-24 22:40:03
  * @LastEditors: cuibai 2367736060@qq.com
- * @LastEditTime: 2022-09-23 23:01:38
+ * @LastEditTime: 2022-09-24 21:30:29
  * @FilePath: \d01\assets\js\article\art_list.js
  * @Description: 
  * 
@@ -112,8 +112,8 @@ $(function () {
                 // 可以通过 first 的值，来判断是通过哪种方式，触发的 jump 回调
                 // 如果 first 的值为 true，证明是方式2触发的
                 // 否则就是方式1触发的
-                console.log(first)
-                console.log(obj.curr)
+                //console.log(first)
+                //console.log(obj.curr)
                 // 把最新的页码值，赋值到 q 这个查询参数对象中
                 q.pagenum = obj.curr
                 // 把最新的条目数，赋值到 q 这个查询参数对象的 pagesize 属性中
